@@ -1,0 +1,36 @@
+1. How will you tackle the challenge above?
+To address the challenge of reading a CSV file, evaluating formulas, and outputting results, I will implement the following process:
+
+File Reading: Utilize BufferedReader to efficiently read the CSV file line by line, allowing for effective handling of potentially large files.
+
+Data Structure: Employ a Map<String, Double> to store evaluated cell values, facilitating quick lookups during formula evaluations.
+
+Formula Parsing: Develop a method to identify and evaluate formulas by parsing them, replacing cell references with their corresponding values from the map.
+
+Output Writing: Use BufferedWriter to write the results to an output CSV file, ensuring that the format aligns with the original input.
+
+2. What types of errors would you check for?
+When developing this application, I will proactively check for several types of errors, including:
+
+File Not Found: Verify that the specified input CSV file exists; if not, handle the FileNotFoundException.
+
+IOException: Address any I/O issues that may occur during file reading or writing.
+
+Invalid CSV Format: Validate the CSV content to catch unexpected line formats or malformed rows that could lead to parsing errors.
+
+Invalid Numeric Conversion: Manage exceptions arising from attempts to convert string values to doubles, such as NumberFormatException.
+
+Formula Evaluation Errors: Ensure robust handling of invalid formulas that may reference non-existent cells or contain syntax errors.
+
+3. How might a user break your code?
+Users could potentially break the code in several ways, including:
+
+Invalid File Path: Specifying a path to a non-existent CSV file will result in a FileNotFoundException.
+
+Malformed CSV Content: Including rows with inconsistent columns or unexpected characters may cause parsing errors.
+
+Invalid Formulas: Inputting malformed or circular formulas (e.g., =A1+B1 where B1 references A1) could lead to runtime exceptions or incorrect evaluations.
+
+Non-numeric Input: Entering non-numeric values in fields expecting numeric data may trigger a NumberFormatException during parsing.
+
+
